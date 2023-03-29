@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'Sassoon Infant Std';
+    src: url('../Assets/font/Sassoon Infant Std Regular.otf') format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: url('../Assets/spinner.gif') 50% 50% no-repeat rgb(255, 255, 255);
+}
+
+body {
+    font-family: 'Sassoon Infant Std';
+    height: 100vh;
+}
+
+.container {
+    height: 100%;
+
+}
+
+h1 {
+    font-size: 2.7vw;
+}
+
+.header-container {
+    height: 13%;
+
+    align-items: center;
+    display: flex;
+}
+
+
+
+.header-container .icons {
+    margin-left: auto;
+    margin-right: 1%;
+}
+
+.header-container img {
+    height: 4.5vw;
+}
+
+.resource-btn {
+    display: inline-block;
+}
+
+.help-btn {
+    display: inline-block;
+}
