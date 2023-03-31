@@ -66,8 +66,46 @@ h1 {
     cursor: pointer;
 }
 
+.resoursePopup {
+    z-index: 150;
+    position: absolute;
+    top: 1px;
+    left: 3%;
+    z-index: 180;
+    height: 100%;
+    width: 94%;
+    display: none;
+}
+
+.close-resource,
+.close-help {
+    position: absolute;
+    right: 0.1px;
+    top: -9px;
+    cursor: pointer;
+}
+
+.resource-image-container {
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+}
+
+.helpPopup {
+    position: absolute;
+    background-color: white;
+    top: 4px;
+    left: 45px;
+    z-index: 190;
+    height: 100%;
+    width: 92%;
+    font-size: 2rem;
+    display: none;
+}
+
 .help-btn {
     display: inline-block;
+    cursor: pointer;
 }
 
 body {
@@ -78,8 +116,8 @@ body {
 .questionsParent {
     height: 73%;
     padding: 0px 15px;
-
     background-color: #0fa0c5;
+    position: relative;
 
 }
 
@@ -107,7 +145,6 @@ border {
 }
 
 .answer {
-
     margin-bottom: 1rem;
     margin-right: 1rem;
     display: inline-block;
@@ -118,9 +155,12 @@ border {
     padding-right: 1.25rem;
     font-size: 2.7vw;
     font-weight: bold;
+    cursor: pointer;
+}
 
-
-
+.click {
+    background-color: rgb(15, 160, 197);
+    color: rgb(255, 255, 255);
 }
 
 .answersContainer {
@@ -137,6 +177,54 @@ border {
 .answers-image {
     width: 100%;
     height: auto;
+}
+
+
+.overlay {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background: rgba(255, 255, 255, .8);
+    top: 1px;
+    z-index: 170;
+    display: none;
+}
+
+.answers-container {
+    position: absolute;
+    bottom: 1px;
+    display: flex;
+    width: 100%;
+    padding-bottom: 1%;
+}
+
+.answers-parent {
+    margin-left: 2%;
+}
+
+.answers-parent-mid {
+    margin: 7% 0 0 2%;
+}
+
+.answer-placeholder {
+    font-size: 3rem;
+}
+
+.disableAnswer {
+
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    display: inline-block;
+    border: solid 2.25pt;
+    border-radius: 1.5rem;
+    padding-left: 1.25rem;
+    padding-bottom: 0.5rem;
+    padding-right: 1.25rem;
+    font-size: 2.7vw;
+    font-weight: bold;
+    cursor: default;
+    border-color: rgb(15 160 197 / 36%);
+    color: rgb(0 0 0 / 45%);
 }
 
 /* media queries */
@@ -167,6 +255,10 @@ border {
     .answer {
         font-size: 2.4vw;
         border-width: 0.3rem;
+    }
+
+    .answer-placeholder {
+        font-size: 4rem;
     }
 
 
@@ -264,6 +356,10 @@ border {
         border-width: 0.17rem;
     }
 
+    .answer-placeholder {
+        font-size: 2rem;
+    }
+
 }
 
 @media(max-width: 425px) {
@@ -295,6 +391,10 @@ border {
         margin-bottom: 0.1rem;
 
         padding-bottom: 0.2rem;
+    }
+
+    .answer-placeholder {
+        font-size: 1rem;
     }
 
 }
