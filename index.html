@@ -67,7 +67,9 @@
                 </div>
                 <div class="answers-container">
                     <div class="col-4 answers-parent">
-                        <div class="answer-placeholder empty-answer"><span>&nbsp;</span>
+                        <div class="answer-placeholder empty-answer">
+                            <span>&nbsp;</span>
+
                         </div>
                         <div class="answer-placeholder empty-answer"><span>&nbsp;</span>
                         </div>
@@ -105,13 +107,14 @@
     </div>
     <div class="overlay"> </div>
     <div>
-        <audio data-producer="Philadelphia Harmonic" controls id="myaudio">
-            <source src="/media/epic.mp3" type="audio/mpeg">
+        <audio class="success">
+            <source src="Assets/Audio/right.mp3" type="audio/mpeg">
         </audio>
-        <audio data-producer="Philadelphia Harmonic" controls id="myaudio">
-            <source src="/media/epic.mp3" type="audio/mpeg">
+        <audio class="wrong">
+            <source src="Assets/Audio/wrong.mp3" type="audio/mpeg">
         </audio>
     </div>
+
     <!-- main JS file -->
     <script src="JS/main.js"></script>
 </body>

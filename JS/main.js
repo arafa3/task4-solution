@@ -66,33 +66,49 @@ $(".empty-answer").on("click", function () {
             //3- changing state: removing the class of empty-answer from the clicked box. And marking it as filled 
             $(this).addClass("filled");
             $(this).removeClass("empty-answer");
+
             //4- removing  the active element from screen.
             lastSelectedAnswer.css("visibility", "hidden");
             lastSelectedAnswer = undefined;
+
             //5- do the right answer sound.
+            $(".success")[0].currentTime = 0;
+            $(".success")[0].play()
+
             //6- do the right answer animation.
+            $(this).append($("<img class='right-mark' src='Assets/images/correct.png'>"));
 
             //7- if all answeres filled, disable the rest of the choices
             if (!$(".empty-answer").length) {
                 $(".answer").addClass("disableAnswer")
                 $(".answer").removeClass("answer")
             }
-
-
         }
 
         //B- if wrong answer:
         else {
-            //fill then empty the answer box
-            $(this).children().html(lastSelectedAnswer.html())
-            setTimeout(() => {
-                console.log('wrong answer')
-                $(this).children().html("&nbsp;")
-            }, 500);
-
 
             //play the wrong answer sound
+            $(".wrong")[0].currentTime = 0;
+            $(".wrong")[0].play()
+
             //play the wrong answer animation
+            $(this).append($("<img class='wrong-mark' src='Assets/images/wrong.png'>"))
+
+
+            //fill then empty the answer box
+            $(this).children().html(lastSelectedAnswer.html())
+            $(this).effect("pulsate", { times: 1 }, 500)
+
+            setTimeout(() => {
+                $(this).children().show()
+                $(this).children().html("&nbsp;")
+                $(".wrong-mark").remove()
+            }, 700);
+
+
+
+
         }
     }
 });

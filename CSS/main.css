@@ -208,7 +208,10 @@ border {
 
 .answer-placeholder {
     font-size: 3rem;
+    position: relative;
 }
+
+
 
 .disableAnswer {
 
@@ -225,6 +228,25 @@ border {
     cursor: default;
     border-color: rgb(15 160 197 / 36%);
     color: rgb(0 0 0 / 45%);
+}
+
+.right-mark {
+    position: absolute;
+    right: 20%;
+    top: 18%;
+    max-width: 16%;
+
+}
+
+.wrong-mark {
+    position: absolute;
+    right: 20%;
+    top: 18%;
+    max-width: 16%;
+}
+
+.filled {
+    position: relative;
 }
 
 /* media queries */
@@ -252,7 +274,8 @@ border {
         padding: 0px 28px;
     }
 
-    .answer {
+    .answer,
+    .disableAnswer {
         font-size: 2.4vw;
         border-width: 0.3rem;
     }
@@ -260,6 +283,7 @@ border {
     .answer-placeholder {
         font-size: 4rem;
     }
+
 
 
 }
@@ -284,10 +308,12 @@ border {
         font-size: 3vw;
     }
 
-    .answer {
+    .answer,
+    .disableAnswer {
         border-radius: 1rem;
         font-size: 3.7vw;
     }
+
 
 }
 
@@ -346,7 +372,8 @@ border {
         height: 5vw;
     }
 
-    .answer {
+    .answer,
+    .disableAnswer {
         border-radius: 0.8rem;
         margin-bottom: 0.5rem;
         border-radius: 0.6rem;
@@ -359,6 +386,7 @@ border {
     .answer-placeholder {
         font-size: 2rem;
     }
+
 
 }
 
@@ -381,15 +409,14 @@ border {
         height: 63%;
     }
 
-    .answer {
+    .answer,
+    .disableAnswer {
         margin-right: 0.4rem;
-
         border-radius: 0.4rem;
         padding-left: 0.4rem;
         padding-right: 0.4rem;
         border-width: 0.125rem;
         margin-bottom: 0.1rem;
-
         padding-bottom: 0.2rem;
     }
 
