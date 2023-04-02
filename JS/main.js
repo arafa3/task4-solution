@@ -104,7 +104,6 @@ $(".empty-answer").on("click", function () {
             setTimeout(() => {
                 $(this).children().html("&nbsp;")
                 $($(this).children()[1]).remove()
-                $(".wrong-mark").remove()
             }, 700);
         }
     }

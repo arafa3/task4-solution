@@ -314,6 +314,11 @@ border {
 
         max-width: 17%;
     }
+
+    .helpPopup {
+        left: 55px;
+        width: 89%;
+    }
 }
 
 @media(min-width: 1800px) {
@@ -344,8 +349,9 @@ border {
         font-size: 5rem;
     }
 
-    .helpPopup {
-        left: 55px;
+    .close-resource,
+    .close-help {
+        width: 4.2rem;
     }
 
 }
@@ -430,6 +436,7 @@ border {
 }
 
 @media(max-width: 768px) {
+
     body {
         height: 50vh;
     }
@@ -481,6 +488,84 @@ border {
     .close-resource,
     .close-help {
         width: 2rem;
+    }
+}
+
+@media (max-width: 667px) {
+    .container {
+        max-width: 485px;
+        height: 191%;
+    }
+
+    h1 {
+        font-size: 2.3vw;
+        padding-top: 23px;
+    }
+
+    .header-container {
+        height: 17%;
+    }
+
+    .header-container img {
+        height: 3.5vw;
+    }
+
+    .header-container .icons {
+        height: 100%;
+        padding-top: 11px;
+    }
+
+    .questionsParent {
+        height: 80%;
+    }
+
+    .answer,
+    .disableAnswer {
+        font-size: 2.9vw;
+        margin-right: 2px;
+        border-width: 0.14rem;
+        margin-bottom: 0.3rem;
+        padding-left: 0.5rem;
+        padding-bottom: 0.2rem;
+        padding-right: 0.5rem rem;
+    }
+
+    .answersContainer {
+        margin: 3.5% 0 3.5% 0;
+    }
+
+    .answer-placeholder {
+        font-size: 1.2rem;
+    }
+
+    .questionPart2 {
+        height: 13%;
+    }
+
+    .restart-btn,
+    .show-answer-btn {
+        margin-top: 0.4rem;
+        padding-left: 4%;
+    }
+
+    .show-answer-btn img {
+        width: 22%;
+    }
+
+    .close-help {
+        right: 2%;
+        width: 1.5rem
+    }
+
+    .helpPopup {
+        font-size: 1rem;
+        height: 93%;
+    }
+
+    .resoursePopup {
+        left: 5%;
+        height: 97%;
+        width: 90%;
     }
 }
 
