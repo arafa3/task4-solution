@@ -9,13 +9,14 @@ $(".resource-btn").on("click", () => {
     $(".overlay").show();
     $(".resoursePopup").show();
     $(".answers-image").hide();
+    $(".questionPart1").css("z-index", "175");
 })
 $(".close-resource").on("click", () => {
     $(".overlay").hide();
     $(".resoursePopup").hide();
     $(".answers-image").show();
+    $(".questionPart1").css("z-index", "90");
 })
-
 $(".help-btn").on("click", () => {
     $(".overlay").show();
     $(".helpPopup").show();
@@ -29,8 +30,8 @@ $(".close-help").on("click", () => {
     $(".answers-image").show();
 })
 
-var lastSelectedAnswer;
 //selecting an answer
+var lastSelectedAnswer;
 $(".answer").on("click", function () {
     if ($(this).hasClass("answer")) {
         //deselecting the active answer
@@ -102,12 +103,9 @@ $(".empty-answer").on("click", function () {
 
             setTimeout(() => {
                 $(this).children().html("&nbsp;")
+                $($(this).children()[1]).remove()
                 $(".wrong-mark").remove()
             }, 700);
-
-
-
-
         }
     }
 });
