@@ -491,7 +491,7 @@ border {
     }
 }
 
-@media (max-width: 667px) {
+@media (max-width: 697px) {
     .container {
         max-width: 485px;
         height: 191%;
