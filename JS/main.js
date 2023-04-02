@@ -22,12 +22,14 @@ $(".help-btn").on("click", () => {
     $(".helpPopup").show();
     $(".questionPart1").css("z-index", "190");
     $(".answers-image").hide();
+    $(".answer-placeholder").css('visibility', "hidden");
 })
 $(".close-help").on("click", () => {
     $(".overlay").hide();
     $(".helpPopup").hide();
     $(".questionPart1").css("z-index", "90");
     $(".answers-image").show();
+    $(".answer-placeholder").css('visibility', "unset");
 })
 
 //selecting an answer
@@ -127,6 +129,7 @@ $(".show-answer-btn").on("click", function () {
         $(answers[index]).css('visibility', "hidden")
         wrongAnswers.addClass("disableAnswer")
         wrongAnswers.removeClass("answer")
+        wrongAnswers.removeClass("click")
     }
 });
 
