@@ -80,8 +80,8 @@ $(".empty-answer").on("click", function () {
 
             //7- if all answeres filled, disable the rest of the choices
             if (!$(".empty-answer").length) {
-                $(".answer").addClass("disableAnswer")
-                $(".answer").removeClass("answer")
+                $(".wrong-answer").addClass("disableAnswer")
+                $(".wrong-answer").removeClass("answer")
             }
         }
 
@@ -101,7 +101,6 @@ $(".empty-answer").on("click", function () {
             $(this).effect("pulsate", { times: 1 }, 500)
 
             setTimeout(() => {
-                $(this).children().show()
                 $(this).children().html("&nbsp;")
                 $(".wrong-mark").remove()
             }, 700);
@@ -111,4 +110,55 @@ $(".empty-answer").on("click", function () {
 
         }
     }
+});
+
+
+//Show Answer Btn
+$(".show-answer-btn").on("click", function () {
+    //1- make array of answers
+    let answers = $(".right-answer");
+    let wrongAnswers = $(".wrong-answer")
+
+    //2- make array of answers-holders
+    let answersPlaceholders = $(".answer-placeholder")
+
+
+    //3- match and hide them from dom, Also disable the wrong answer
+    for (let index = 0; index < answers.length; index++) {
+        $(answersPlaceholders[index]).text($(answers[index]).text())
+        $(answersPlaceholders[index]).append($("<img class='right-mark' src='Assets/images/correct.png'>"));
+        $(answers[index]).css('visibility', "hidden")
+        wrongAnswers.addClass("disableAnswer")
+        wrongAnswers.removeClass("answer")
+    }
+});
+
+
+//Restart Btn
+$(".restart-btn").on("click", function () {
+
+    //1- make array of answers-holders
+    let answersPlaceholders = $(".answer-placeholder")
+
+    //2- reset the placeholders (removing any answer and right mark)
+    for (let index = 0; index < answersPlaceholders.length; index++) {
+        $(answersPlaceholders[index]).html("<span>&nbsp;</span>")
+        $(answersPlaceholders[index]).addClass("empty-answer")
+        $(answersPlaceholders[index]).removeClass("filled")
+        $(".right-mark").remove()
+
+
+    }
+
+    //3- resetting right answers
+    let answers = $(".right-answer");
+
+    $(answers).css('visibility', "unset")
+    $(answers).removeClass("click")
+
+    //4- resetting wrong answers
+    let wrongAnswers = $(".wrong-answer")
+    wrongAnswers.removeClass("disableAnswer")
+    wrongAnswers.addClass("answer")
+
 });
