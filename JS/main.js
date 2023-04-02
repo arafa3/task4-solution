@@ -77,7 +77,7 @@ $(".empty-answer").on("click", function () {
             $(".success")[0].play()
 
             //6- do the right answer animation.
-            $(this).append($("<img class='right-mark' src='assets/images/correct.png'>"));
+            $(this).append($("<img class='right-mark' src='Assets/images/correct.png'>"));
 
             //7- if all answeres filled, disable the rest of the choices
             if (!$(".empty-answer").length) {
@@ -94,7 +94,7 @@ $(".empty-answer").on("click", function () {
             $(".wrong")[0].play()
 
             //play the wrong answer animation
-            $(this).append($("<img class='wrong-mark' src='assets/images/wrong.png'>"))
+            $(this).append($("<img class='wrong-mark' src='Assets/images/wrong.png'>"))
 
 
             //fill then empty the answer box
@@ -104,11 +104,8 @@ $(".empty-answer").on("click", function () {
             setTimeout(() => {
                 $(this).children().html("&nbsp;")
                 $($(this).children()[1]).remove()
+                $(".wrong-mark").remove()
             }, 700);
-
-
-
-
         }
     }
 });
@@ -127,7 +124,7 @@ $(".show-answer-btn").on("click", function () {
     //3- match and hide them from dom, Also disable the wrong answer
     for (let index = 0; index < answers.length; index++) {
         $(answersPlaceholders[index]).text($(answers[index]).text())
-        $(answersPlaceholders[index]).append($("<img class='right-mark' src='assets/images/correct.png'>"));
+        $(answersPlaceholders[index]).append($("<img class='right-mark' src='Assets/images/correct.png'>"));
         $(answers[index]).css('visibility', "hidden")
         wrongAnswers.addClass("disableAnswer")
         wrongAnswers.removeClass("answer")
